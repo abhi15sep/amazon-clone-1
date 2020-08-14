@@ -1,0 +1,20 @@
+.product__title, .product__price{
+  margin: 0;
+}
+
+.product{
+  width: fit-content;
+  padding: 20px;
+  border: 1px lightgrey solid;
+  border-radius: 7px;
+}
+
+.product__img{
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.product__button{
+  display: flex;
+  justify-content: center;
+}

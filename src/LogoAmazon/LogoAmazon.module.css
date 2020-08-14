@@ -1,0 +1,7 @@
+.logo__wrapper{
+  margin: 10px 55px 10px 40px;
+}
+  .header__logo{
+    object-fit: contain;
+    width: 100px;
+  }
