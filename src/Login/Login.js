@@ -4,7 +4,6 @@ import { useHistory} from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { auth, googleAuth } from '../firebase';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 function Login() {
@@ -26,10 +25,9 @@ function Login() {
     e.preventDefault()
 
     auth.signInWithEmailAndPassword(email, password)
-      .then(authUser => {
+      .then(() => {
         history.push('/')
       })
-      // .catch(e => )
   }
 
   const register = (e) => {
@@ -53,7 +51,7 @@ function Login() {
         <TextField type='password' value={password} onChange={(e) => setPassword(e.target.value)} id="standard-basic" label="Password" />
         <Button onClick={login} className={style.button__form} variant="contained">Sign in</Button>
         <Button onClick={register} variant="contained">Create your account</Button>
-        <Button color='secondary' onClick={signInGoogle} variant="contained">Sign In with <FavoriteIcon /></Button>
+        <Button style={{width: '100%'}} color='primary' onClick={signInGoogle} variant="contained">Sign In with <img style={{marginLeft: '5px'}} src='https://www.gstatic.com/mobilesdk/160512_mobilesdk/auth_service_google.svg' alt='' /></Button>
       </form>
     </div>
   )
