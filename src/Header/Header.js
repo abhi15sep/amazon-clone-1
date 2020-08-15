@@ -5,8 +5,13 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import Badge from '@material-ui/core/Badge';
 import LogoAmazon from '../LogoAmazon/LogoAmazon';
+import { useStateValue } from '../StateProvider/StateProvider';
 
 function Header() {
+
+  const [{basket}] = useStateValue()
+  console.log(basket);
+
   return (
     <div className={headStyle.header}>
       {/* image logo */}
@@ -34,7 +39,7 @@ function Header() {
           <span className={headStyle.navLink__two}>Prime</span>
         </Link>
         <Link className={`${headStyle.navLink__wrap} ${headStyle.basket__icon}`} to='/checkout'>
-          <Badge color="secondary" badgeContent={0} showZero>
+          <Badge color="secondary" badgeContent={basket && basket.length} showZero>
             <ShoppingBasketIcon />
           </Badge>
         </Link>
