@@ -10,7 +10,6 @@ import { useStateValue } from '../StateProvider/StateProvider';
 function Header() {
 
   const [{basket}] = useStateValue()
-  console.log(basket);
 
   return (
     <div className={headStyle.header}>

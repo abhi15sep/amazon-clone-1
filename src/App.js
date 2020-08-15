@@ -8,6 +8,7 @@ import {
 import Header from './Header/Header';
 import LogoAmazon from './LogoAmazon/LogoAmazon';
 import Home from './Home/Home';
+import Checkout from './Checkout/Checkout';
 
 class App extends Component {
   render() {
@@ -17,11 +18,11 @@ class App extends Component {
           <Switch>
             <Route path='/login'>
               <LogoAmazon style={{backgroundColor: '#131921', padding: '20px'}} />
-              <h1>login</h1>
+              
             </Route>
             <Route path='/checkout'>
               <Header />
-              <h1>checkout</h1>
+              <Checkout />
             </Route>
             <Route path='/'>
               <Header />
