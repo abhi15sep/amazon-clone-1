@@ -15,7 +15,7 @@ function Home() {
         <Product id='21332434' title={'SYLVANIA Smart + ZigBee Indoor Starter Kit, Color Changing Light Strip, Works with SmartThings, Wink, and Amazon Echo Plus'}  price={38.15} rating={4} 
           image='https://images-na.ssl-images-amazon.com/images/I/71ysrdV24ML._AC_SL1500_.jpg'
         />
-        <Product id='' title={'TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof TWS Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black'}  price={42.99} rating={5} 
+        <Product id='' title={'TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging'}  price={42.99} rating={5} 
           image='https://images-na.ssl-images-amazon.com/images/I/71CH1MwvxyL._AC_SL1500_.jpg'
         />
       </div>
@@ -25,7 +25,7 @@ function Home() {
           image='https://images-na.ssl-images-amazon.com/images/I/61FNYT%2BpT2L._AC_SL1500_.jpg'
         />
         <Product id='543324' title={'New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Space Gray (4th Generation)'}  price={500} rating={5} 
-          image='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Rooster03.jpg/250px-Rooster03.jpg'
+          image='https://images-na.ssl-images-amazon.com/images/I/61GrEskUMAL._AC_SL1500_.jpg'
         />
         <Product id='45154' title={'Samsung Galaxy Tab S6 10.5", 128GB (LTE VERIZON & WiFi) Tablet Mountain Gray - SM-T867VZAAVZW'}  price={773.71} rating={4} 
           image='https://images-na.ssl-images-amazon.com/images/I/71v8Md%2BkzjL._AC_SL1500_.jpg'

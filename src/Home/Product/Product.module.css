@@ -1,14 +1,13 @@
 .product__title, .product__price{
   margin: 5px 0 0 0;
+  width: 100%;
 }
 
 .product{
-  max-height: 400px;
-  min-width: 100px;
-  width: 100%;
+  /* max-height: 600px; */
+  min-width: 180px;
   padding: 20px;
   background-color: rgb(255, 255, 255);
-  z-index: 2;
   border-radius: 8px;
   margin: 10px;
 }

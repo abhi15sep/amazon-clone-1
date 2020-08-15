@@ -1,5 +1,5 @@
 .home{
-  /* max-width: 1400px; */
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -7,12 +7,20 @@
 .home__banner{
   mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
   width: 100%;
+  position: relative;
   z-index: -100;
   margin-bottom: -75px;
 }
 
 .home__row{
   display: flex;
-  margin: 0 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 700px){
+  .home__row{
+    display: block;
+  }
 }
 

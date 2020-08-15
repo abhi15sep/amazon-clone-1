@@ -6,10 +6,23 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import Badge from '@material-ui/core/Badge';
 import LogoAmazon from '../LogoAmazon/LogoAmazon';
 import { useStateValue } from '../StateProvider/StateProvider';
+import { auth } from '../firebase';
 
 function Header() {
 
-  const [{basket}] = useStateValue()
+  const [{user, basket}, dispatch] = useStateValue()
+
+  const logout = () => {
+    if(user){
+      auth.signOut()
+      dispatch({
+        type: 'CLEAR',
+        basket: []
+      })
+    }
+  }
+
+  console.log(user);
 
   return (
     <div className={headStyle.header}>
@@ -25,9 +38,9 @@ function Header() {
 
       {/* nav-links */}
       <div className={headStyle.header__navLink}>
-        <Link className={headStyle.navLink__wrap} to='/login'>
-          <span className={headStyle.navLink__one}>Hello,</span>
-          <span className={headStyle.navLink__two}>Login</span>
+        <Link onClick={user ? logout : undefined} className={headStyle.navLink__wrap} to={user ? '/' : '/login'}>
+          <span className={headStyle.navLink__one}>Hello, {user && user.displayName }</span>
+          <span className={headStyle.navLink__two}>{user ? 'Logout' : 'Login'}</span>
         </Link>
         <Link className={headStyle.navLink__wrap} to='/checkout'>
           <span className={headStyle.navLink__one}>Returns</span>

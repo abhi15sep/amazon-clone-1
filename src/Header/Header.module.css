@@ -3,7 +3,7 @@
   width: 100%;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10000;
   display: flex;
   align-items: center;
 }
@@ -11,8 +11,9 @@
 
   .header__searchBox{
     flex: 1;
-    display: flex;max-width: 900px;
-    margin-right: 2vw;
+    display: flex;
+    max-width: 900px;
+    /* display: none; */
   }
 
     .searchBox__input{
@@ -34,9 +35,10 @@
 
   .header__navLink{
     display: flex;
-    flex-direction: row;
     padding: 10px 15px;
     margin: 0 5px;
+    /* display: none; */
+
   }
     .navLink__wrap{
       display: flex;
@@ -61,3 +63,17 @@
         flex-direction: row;
         align-items: flex-end;
       }
+@media screen and (max-width: 700px){
+  .header__searchBox{
+    margin: 0;
+    width: 90%;
+  }
+  .header{
+    flex-direction: column;
+  }
+  .header__navLink{
+    justify-content: space-between;
+    min-width: 256px;
+    width: 70%;
+  }
+}

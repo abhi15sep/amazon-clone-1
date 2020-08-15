@@ -3,12 +3,20 @@ export const initialState = {
   user: null
 }
 
-export const totalPrice = (basket) => (
-  basket.reduce((amount, item) => item.price + amount, 0)
-)
+
 
 const reducer = (state, action) => {
   switch(action.type){
+    case 'CLEAR':
+      return {
+        ...state,
+        basket: action.basket
+      }
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.user,
+      }
     case 'ADD_TO_BASKET':
       return {
         ...state,

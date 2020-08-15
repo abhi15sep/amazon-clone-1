@@ -7,7 +7,7 @@ import Subtotal from './Subtotal/Subtotal'
 function Checkout() {
 
   const [{basket}] = useStateValue()
-
+  console.log(basket);
   return (
     <div className={checkStyle.checkout}>
       <div className={checkStyle.checkout__left}>
@@ -19,7 +19,7 @@ function Checkout() {
           ) : (
             <div className={checkStyle.checkout__title}>
               <h2 style={{borderBottom: '1px solid lightgray', padding: '20px 0'}}>$hopping Basket</h2>
-              {
+              { basket &&
                 basket.map(({id, title, image, price, rating}) => (
                   <CheckoutProduct 
                     id={id}
@@ -36,7 +36,7 @@ function Checkout() {
         }
       </div>
       
-      {
+      { basket &&
         basket.length > 0 && (
           <div className={checkStyle.checkout__right}>
             <Subtotal />

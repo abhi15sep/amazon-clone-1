@@ -3,13 +3,17 @@ import React from 'react'
 import { Button } from '@material-ui/core'
 import CurrencyFormat from 'react-currency-format'
 import { useStateValue } from '../../StateProvider/StateProvider'
-import { totalPrice } from '../../StateProvider/Reducer'
+// import { totalPrice } from '../../StateProvider/Reducer'
 
 
 
 function Subtotal() {
 
-  const [{basket}, dispatch] = useStateValue()
+  const totalPrice = (basket) => (
+    basket.reduce((amount, item) => item.price + amount, 0)
+  )
+
+  const [{basket}] = useStateValue()
 
   return (
     <div className={subStyle.subtotal}>
