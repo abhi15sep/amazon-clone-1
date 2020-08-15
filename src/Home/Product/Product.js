@@ -1,5 +1,7 @@
 import React from 'react'
 import proStyle from './Product.module.css'
+import Button from '@material-ui/core/Button';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 function Product({id, image, title, price, rating}) {
   return (
@@ -11,16 +13,18 @@ function Product({id, image, title, price, rating}) {
       </p>
       <div className={proStyle.product__rating}>
         {
-          Array(rating)
+          Array((rating > 5 && 5) || (rating < 0 && 1) || rating)
             .fill()
-            .map((_) => (
+            .map(() => (
               <span aria-label='star'>⭐</span>
             ))
         }
       </div>
       <img className={proStyle.product__img} src={image} alt='' />
       <div className={proStyle.product__button}>
-        <button >Add to basket</button>
+        <Button variant="contained" style={{fontSize: '12px', backgroundColor: '#f8bb6c'}} >
+          <AddShoppingCartIcon style={{marginRight: '5px'}} />Add to basket
+        </Button>
       </div>
     </div>
   )

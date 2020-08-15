@@ -1,6 +1,5 @@
 .home{
-  
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -8,4 +7,12 @@
 .home__banner{
   mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
   width: 100%;
+  z-index: -1;
+  margin-bottom: -25px;
 }
+
+.home__row{
+  display: flex;
+  margin: 0 5px;
+}
+
