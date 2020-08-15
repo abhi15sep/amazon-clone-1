@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { useHistory} from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { auth } from '../firebase';
+import { auth, googleAuth } from '../firebase';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 function Login() {
@@ -11,6 +12,15 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [username, setusername] = useState('')
+
+  const signInGoogle = () => {
+    auth.signInWithPopup(googleAuth)
+      .then(() => {
+        history.push('/')
+      }).catch((err) => {
+        console.log(err.message);
+      })
+  }
 
   const login = (e) => {
     e.preventDefault()
@@ -43,6 +53,7 @@ function Login() {
         <TextField type='password' value={password} onChange={(e) => setPassword(e.target.value)} id="standard-basic" label="Password" />
         <Button onClick={login} className={style.button__form} variant="contained">Sign in</Button>
         <Button onClick={register} variant="contained">Create your account</Button>
+        <Button color='secondary' onClick={signInGoogle} variant="contained">Sign In with <FavoriteIcon /></Button>
       </form>
     </div>
   )

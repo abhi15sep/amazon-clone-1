@@ -8,6 +8,7 @@ import LogoAmazon from '../LogoAmazon/LogoAmazon';
 import { useStateValue } from '../StateProvider/StateProvider';
 import { auth } from '../firebase';
 
+
 function Header() {
 
   const [{user, basket}, dispatch] = useStateValue()

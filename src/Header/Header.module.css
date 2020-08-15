@@ -74,6 +74,11 @@
   .header__navLink{
     justify-content: space-between;
     min-width: 256px;
-    width: 70%;
+    width: 90%;
+    padding: 10px 0;
+  }
+
+  .navLink__wrap{
+    padding-left: 0;
   }
 }
